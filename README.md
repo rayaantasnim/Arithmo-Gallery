@@ -1,6 +1,6 @@
 <div align="center">
   <a href="https://github.com/Arithmo-Edge">
-    <img src="Assets/favicon/favicon.ico" alt="Arithmo Edge Logo" width="120" style="border-radius: 24px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);" />
+    <img src="Assets/Images/The 14-Portal Federated Constellation.webp" alt="Arithmo Edge Logo" width="1200" style="border-radius: 24px; box-shadow: 0 8px 24px rgba(0, 0, 0, 0.25);" />
   </a>
 
   <h1>Arithmo Edge</h1>
