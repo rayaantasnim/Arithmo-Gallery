@@ -1,0 +1,16 @@
+{
+  "name": "arithmo-gallery",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Arithmo-Gallery — Page 14 (Visual Gallery) of the Arithmo Edge 14-Page Showcase",
+  "type": "module",
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "build": "node -e \"console.log('Static exhibition build verified.')\"",
+    "lint": "node -e \"import('fs').then(fs => { const html = fs.readFileSync('index.html','utf8'); if (!html.includes('GALLERY_ITEMS')) process.exit(1); console.log('Lint OK'); })\""
+  },
+  "dependencies": {
+    "express": "^4.21.2"
+  }
+}

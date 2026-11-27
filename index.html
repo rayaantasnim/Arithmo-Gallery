@@ -1,0 +1,1792 @@
+<!DOCTYPE html>
+<html lang="en" class="dark scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Arithmo Edge — 14. Visual Gallery | Arithmo-Gallery</title>
+  <meta name="description" content="Page 14 of the Arithmo Edge 14-Page Showcase: Curated 20-artwork visual architecture exhibition exploring the 14 federated portals, 5 ELO arenas, 42-Engine AI Core, and QPRT-4 Shield." />
+  <meta property="og:title" content="Arithmo Edge — 14. Visual Gallery | Arithmo-Gallery" />
+  <meta property="og:description" content="Explore the 20-artwork visual architecture exhibition of Arithmo Edge — The World's First Real-Time ELO-Rated Competitive Mathematics & Olympiad Mega-Ecosystem." />
+  <meta property="og:type" content="website" />
+  <meta property="og:url" content="https://rayaantasnim.github.io/Arithmo-Gallery/" />
+  <meta name="theme-color" content="#0B1120" />
+  <link rel="icon" href="Assets/favicon/favicon.ico" />
+  <link rel="apple-touch-icon" href="https://rayaantasnim.github.io/Arithmo-Edge/favicon.jpg" />
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Tailwind CSS via CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          colors: {
+            obsidian: '#0B1120',
+            panel: '#111A2E',
+            navy: '#1B365D',
+            flare: '#FF8A2B',
+            cyanNeon: '#00F5FF',
+            violetNeon: '#9D4EDD',
+            amberNeon: '#F59E0B',
+            emeraldNeon: '#10B981',
+            crimsonNeon: '#F43F5E',
+          },
+          fontFamily: {
+            sans: ['Inter', 'system-ui', 'sans-serif'],
+            display: ['Space Grotesk', 'Inter', 'system-ui', 'sans-serif'],
+            mono: ['JetBrains Mono', 'monospace'],
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    :root {
+      color-scheme: dark;
+    }
+
+    body {
+      background-color: #0B1120;
+      color: #CBD5E1;
+      font-family: 'Inter', system-ui, sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Luminous Mathematical Coordinate Grid Overlay */
+    .coord-grid-bg {
+      background-image:
+        linear-gradient(to right, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(148, 163, 184, 0.05) 1px, transparent 1px),
+        linear-gradient(to right, rgba(0, 245, 255, 0.055) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 245, 255, 0.055) 1px, transparent 1px);
+      background-size: 32px 32px, 32px 32px, 160px 160px, 160px 160px;
+    }
+
+    /* Elevated Glassmorphic Card Base */
+    .glass-card {
+      background: linear-gradient(165deg, rgba(17, 26, 46, 0.94) 0%, rgba(12, 19, 36, 0.96) 100%);
+      border: 1px solid rgba(56, 189, 248, 0.16);
+      box-shadow: 0 18px 46px -20px rgba(2, 6, 23, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+
+    .glass-card:hover {
+      transform: translateY(-5px);
+      border-color: rgba(0, 245, 255, 0.5);
+      box-shadow: 0 0 0 1px rgba(0, 245, 255, 0.2), 0 24px 60px -16px rgba(0, 245, 255, 0.24);
+    }
+
+    /* Domain-Colored Hover Rim Glows for the 5 Core Arenas */
+    .arena-card {
+      background: linear-gradient(165deg, rgba(17, 26, 46, 0.94) 0%, rgba(12, 19, 36, 0.96) 100%);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      box-shadow: 0 18px 46px -20px rgba(2, 6, 23, 0.75), inset 0 1px 0 rgba(255, 255, 255, 0.06);
+      transition: transform 0.35s cubic-bezier(0.22, 1, 0.36, 1), border-color 0.35s ease, box-shadow 0.35s ease;
+    }
+    .arena-card:hover {
+      transform: translateY(-5px);
+      border-color: var(--arena-accent, #00F5FF);
+      box-shadow: 0 0 0 1px var(--arena-accent, #00F5FF), 0 24px 60px -14px var(--arena-glow, rgba(0, 245, 255, 0.34));
+    }
+
+    .artwork-img {
+      transition: transform 0.7s cubic-bezier(0.22, 1, 0.36, 1), filter 0.4s ease;
+    }
+    .group:hover .artwork-img {
+      transform: scale(1.045);
+    }
+
+    /* Hide scrollbar for horizontal filter strip */
+    .no-scrollbar::-webkit-scrollbar {
+      display: none;
+    }
+    .no-scrollbar {
+      -ms-overflow-style: none;
+      scrollbar-width: none;
+    }
+
+    /* Slide-out Drawer Animation */
+    .drawer-panel {
+      transition: transform 0.32s cubic-bezier(0.22, 1, 0.36, 1);
+    }
+    .drawer-backdrop {
+      transition: opacity 0.28s ease;
+    }
+
+    /* Slideshow progress bar animation */
+    @keyframes slideProgress {
+      from { width: 0%; }
+      to { width: 100%; }
+    }
+    .slideshow-progress-active {
+      animation: slideProgress 5s linear infinite;
+    }
+  </style>
+</head>
+<body id="top" class="bg-[#0B1120] text-[#CBD5E1] antialiased selection:bg-[#00F5FF]/25 selection:text-[#00F5FF] coord-grid-bg min-h-screen flex flex-col">
+
+  <!-- Vibrant Radiant Ambient Auroras -->
+  <div class="pointer-events-none fixed inset-0 overflow-hidden z-0" aria-hidden="true">
+    <div class="absolute -top-40 left-[12%] w-[640px] h-[640px] rounded-full bg-[#00F5FF]/[0.11] blur-[150px]"></div>
+    <div class="absolute top-[18%] -right-32 w-[560px] h-[560px] rounded-full bg-[#9D4EDD]/[0.14] blur-[150px]"></div>
+    <div class="absolute top-[55%] -left-32 w-[540px] h-[540px] rounded-full bg-[#10B981]/[0.10] blur-[150px]"></div>
+    <div class="absolute -bottom-32 right-[18%] w-[620px] h-[620px] rounded-full bg-[#FF8A2B]/[0.11] blur-[160px]"></div>
+  </div>
+
+  <!-- =====================================================================
+       CLEAN SINGLE-ROW STICKY TOP NAVBAR + EXHIBITION CONTROLS DROPDOWN
+  ====================================================================== -->
+  <header id="main-navbar" class="sticky top-0 z-40 w-full backdrop-blur-xl bg-[#0B1120]/85 border-b border-cyan-400/20 shadow-[0_8px_32px_rgba(2,6,23,0.45)]">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-[72px] flex items-center justify-between gap-3 sm:gap-4 relative">
+      <!-- Left: Logo + Brand Title + PAGE 14 · GALLERY Badge -->
+      <a href="https://rayaantasnim.github.io/Arithmo-Edge/index.html" class="flex items-center gap-3 min-w-0 group focus:outline-none">
+        <div class="relative shrink-0 w-9 h-9 rounded-lg overflow-hidden border border-cyan-400/30 bg-[#111A2E] shadow-lg shadow-[#00F5FF]/20 group-hover:border-[#00F5FF] transition-colors">
+          <img
+            src="Assets/favicon/favicon.ico"
+            onerror="this.onerror=null;this.src='https://rayaantasnim.github.io/Arithmo-Edge/favicon.jpg';"
+            alt="Arithmo Edge Logo"
+            class="w-9 h-9 rounded-lg object-cover"
+          />
+        </div>
+        <div class="min-w-0">
+          <div class="flex items-center gap-2">
+            <span class="font-display font-bold text-[#F8FAFC] text-base sm:text-lg tracking-tight leading-none group-hover:text-[#00F5FF] transition-colors truncate">
+              Arithmo Edge
+            </span>
+            <span class="hidden sm:inline-flex items-center px-2.5 py-0.5 rounded-md text-[10px] font-mono font-bold uppercase tracking-wider bg-[#00F5FF]/15 text-[#00F5FF] border border-[#00F5FF]/40 shadow-[0_0_12px_rgba(0,245,255,0.18)] shrink-0">
+              GALLERY
+            </span>
+          </div>
+          <p class="hidden xl:block text-[11px] text-[#CBD5E1]/75 truncate max-w-md mt-0.5">
+            The World's First Real-Time ELO-Rated Competitive Mathematics &amp; Olympiad Mega-Ecosystem
+          </p>
+        </div>
+      </a>
+
+      <!-- Right: 1. GitHub Pill · 2. Exhibition Controls Dropdown Toggler · 3. Hamburger Drawer Toggler -->
+      <div class="flex items-center gap-2 sm:gap-2.5 shrink-0">
+        <!-- 1. GitHub Pill Button -->
+        <a
+          href="https://github.com/Arithmo-Edge"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-full text-xs sm:text-sm font-medium text-[#F8FAFC] border border-cyan-400/25 bg-[#111A2E]/90 hover:border-[#00F5FF] hover:bg-[#00F5FF]/10 hover:shadow-[0_0_16px_rgba(0,245,255,0.2)] transition-all"
+        >
+          <svg class="w-4 h-4 text-[#00F5FF]" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span class="hidden sm:inline">GitHub</span>
+        </a>
+
+        <!-- 2. Exhibition Controls Dropdown Toggler -->
+        <div class="relative" id="exhibition-controls-wrapper">
+          <button
+            id="exhibition-controls-btn"
+            type="button"
+            aria-expanded="false"
+            aria-controls="exhibition-controls-dropdown"
+            class="inline-flex items-center gap-2 px-3 sm:px-3.5 py-2 rounded-full text-xs sm:text-sm font-semibold text-[#F8FAFC] border border-cyan-400/35 bg-gradient-to-r from-[#111A2E] via-[#16223D] to-[#111A2E] hover:border-[#00F5FF] hover:shadow-[0_0_20px_rgba(0,245,255,0.28)] transition-all cursor-pointer"
+          >
+            <svg class="w-4 h-4 text-[#FF8A2B] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+              <path stroke-linecap="round" stroke-linejoin="round" d="M12 6V4m0 2a2 2 0 100 4m0-4a2 2 0 110 4m-6 8a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4m6 6v10m6-2a2 2 0 100-4m0 4a2 2 0 110-4m0 4v2m0-6V4" />
+            </svg>
+            <span class="hidden md:inline">Exhibition Controls</span>
+            <span id="active-filter-badge" class="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[11px] font-mono font-bold bg-[#00F5FF]/15 text-[#00F5FF] border border-[#00F5FF]/35">
+              <span id="active-filter-badge-text">All (20)</span>
+              <span id="exhibition-chevron" class="transition-transform duration-200">▾</span>
+            </span>
+          </button>
+
+          <!-- Sleek Glowing Glassmorphic Dropdown Panel -->
+          <div
+            id="exhibition-controls-dropdown"
+            class="hidden fixed sm:absolute left-4 right-4 sm:left-auto sm:right-0 top-[76px] sm:top-full sm:mt-3 w-auto sm:w-[440px] md:w-[500px] rounded-2xl border border-cyan-400/35 bg-[#111A2E]/95 backdrop-blur-2xl shadow-[0_24px_70px_rgba(0,0,0,0.65),0_0_40px_rgba(0,245,255,0.16)] p-5 z-50"
+          >
+            <!-- Top Row: Title + Live Telemetry Counter -->
+            <div class="flex items-center justify-between gap-3 pb-3.5 mb-4 border-b border-white/10">
+              <div class="flex items-center gap-2">
+                <span class="w-2 h-2 rounded-full bg-[#00F5FF] shadow-[0_0_8px_#00F5FF]"></span>
+                <span class="font-display font-bold text-sm text-[#F8FAFC] tracking-tight">Exhibition Controls</span>
+              </div>
+              <span id="visible-count-label" class="font-mono text-[11px] font-semibold px-2.5 py-1 rounded-md bg-[#0B1120] text-[#00F5FF] border border-cyan-400/25">
+                Showing 20 / 20 Plates
+              </span>
+            </div>
+
+            <!-- Category Filter Pills -->
+            <div class="space-y-2.5">
+              <div class="text-[11px] font-mono uppercase tracking-[0.15em] text-[#CBD5E1]/70">
+                Filter Exhibition Wings
+              </div>
+              <div id="filter-bar" class="flex flex-wrap gap-2" role="tablist" aria-label="Exhibition Categories">
+                <!-- Populated via JS -->
+              </div>
+            </div>
+
+            <!-- Divider + Radiant Slideshow Action -->
+            <div class="mt-5 pt-4 border-t border-white/10 flex flex-col sm:flex-row items-stretch sm:items-center justify-between gap-3">
+              <span class="text-[11px] font-mono text-[#CBD5E1]/75">
+                Auto-advance every 5s in Cinema Lightbox
+              </span>
+              <button
+                id="start-slideshow-btn"
+                type="button"
+                class="inline-flex items-center justify-center gap-2 px-4 py-2.5 rounded-xl text-xs sm:text-sm font-bold text-[#0B1120] bg-gradient-to-r from-[#00F5FF] via-[#10B981] to-[#FF8A2B] hover:brightness-110 shadow-[0_0_24px_rgba(0,245,255,0.32)] transition-all cursor-pointer shrink-0"
+              >
+                <svg class="w-4 h-4 fill-current" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M8 5v14l11-7z" />
+                </svg>
+                <span>Start Auto-Exhibition Slideshow</span>
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <!-- 3. Hamburger Drawer Toggler -->
+        <button
+          id="open-drawer-btn"
+          type="button"
+          aria-label="Open 14-Page Showcase Navigation Drawer"
+          aria-expanded="false"
+          aria-controls="nav-drawer"
+          class="w-10 h-10 rounded-xl border border-cyan-400/25 bg-[#111A2E]/95 hover:border-[#00F5FF] hover:bg-[#00F5FF]/15 text-[#F8FAFC] flex items-center justify-center transition-all focus:outline-none focus:ring-2 focus:ring-[#00F5FF]/50 shadow-md cursor-pointer"
+        >
+          <span class="text-xl leading-none font-mono select-none" aria-hidden="true">≡</span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- =====================================================================
+       RIGHT SLIDE-OUT DRAWER OVERLAY
+  ====================================================================== -->
+  <div id="drawer-wrapper" class="fixed inset-0 z-50 pointer-events-none hidden" aria-hidden="true">
+    <!-- Backdrop -->
+    <div id="drawer-backdrop" class="drawer-backdrop fixed inset-0 bg-black/75 backdrop-blur-sm opacity-0"></div>
+
+    <!-- Drawer Panel -->
+    <aside
+      id="nav-drawer"
+      role="dialog"
+      aria-modal="true"
+      aria-label="Arithmo Edge 14-Page Showcase Menu"
+      class="drawer-panel fixed top-0 right-0 h-full w-full max-w-[400px] bg-[#0B1120]/95 backdrop-blur-2xl border-l border-cyan-400/20 shadow-2xl translate-x-full flex flex-col"
+    >
+      <!-- Drawer Header -->
+      <div class="px-5 py-4 border-b border-white/10 flex items-center justify-between gap-3 shrink-0 bg-[#111A2E]/90">
+        <div>
+          <h2 class="font-display font-bold text-[#F8FAFC] text-lg leading-tight">Arithmo Edge</h2>
+          <p class="text-xs text-[#CBD5E1]/75 mt-0.5">Powered by Olympiad Edge · 14-Page Showcase</p>
+        </div>
+        <button
+          id="close-drawer-btn"
+          type="button"
+          aria-label="Close Navigation Drawer"
+          class="w-9 h-9 rounded-lg border border-cyan-400/25 bg-[#0B1120] hover:border-[#00F5FF] hover:text-[#00F5FF] text-[#CBD5E1] flex items-center justify-center transition-colors text-base font-mono cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+
+      <!-- Scrollable Drawer Body -->
+      <div class="flex-1 overflow-y-auto px-5 py-4 space-y-5">
+        <!-- Live Countdown Card -->
+        <div class="rounded-xl border border-cyan-400/25 bg-[#111A2E] p-4 shadow-[0_0_25px_rgba(0,245,255,0.08)]">
+          <div class="flex items-center justify-between gap-2 text-xs mb-3">
+            <span class="font-medium text-[#CBD5E1]">Global Launch Target</span>
+            <span class="font-mono font-semibold text-[#00F5FF]">Dec 31, 2026 · 12:00 AM</span>
+          </div>
+          <div class="grid grid-cols-4 gap-2 text-center">
+            <div class="rounded-lg bg-[#0B1120] border border-white/10 py-2 px-1">
+              <div id="cd-days" class="font-mono font-bold text-lg text-[#F8FAFC] leading-none">00</div>
+              <div class="text-[10px] uppercase tracking-wider text-[#CBD5E1]/70 mt-1">Days</div>
+            </div>
+            <div class="rounded-lg bg-[#0B1120] border border-white/10 py-2 px-1">
+              <div id="cd-hours" class="font-mono font-bold text-lg text-[#F8FAFC] leading-none">00</div>
+              <div class="text-[10px] uppercase tracking-wider text-[#CBD5E1]/70 mt-1">Hours</div>
+            </div>
+            <div class="rounded-lg bg-[#0B1120] border border-white/10 py-2 px-1">
+              <div id="cd-mins" class="font-mono font-bold text-lg text-[#F8FAFC] leading-none">00</div>
+              <div class="text-[10px] uppercase tracking-wider text-[#CBD5E1]/70 mt-1">Mins</div>
+            </div>
+            <div class="rounded-lg bg-[#0B1120] border border-cyan-400/25 py-2 px-1">
+              <div id="cd-secs" class="font-mono font-bold text-lg text-[#00F5FF] leading-none">00</div>
+              <div class="text-[10px] uppercase tracking-wider text-[#CBD5E1]/70 mt-1">Secs</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- 14-Page Navigation List -->
+        <div>
+          <div class="text-[11px] font-mono uppercase tracking-[0.16em] text-[#CBD5E1]/60 mb-2.5 px-1">
+            14-Page Showcase Navigation
+          </div>
+          <nav id="drawer-page-list" class="space-y-1.5" aria-label="14-Page Showcase Links">
+            <!-- Populated via JS -->
+          </nav>
+        </div>
+      </div>
+
+      <!-- Drawer Footer -->
+      <div class="px-5 py-3.5 border-t border-white/10 bg-[#111A2E]/95 flex items-center justify-between text-xs text-[#CBD5E1]/80 shrink-0">
+        <span>Powered by Olympiad Edge</span>
+        <a
+          href="https://github.com/Arithmo-Edge"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="font-mono text-[#00F5FF] hover:underline"
+        >
+          github.com/Arithmo-Edge
+        </a>
+      </div>
+    </aside>
+  </div>
+
+  <!-- =====================================================================
+       MAIN EXHIBITION CONTENT
+  ====================================================================== -->
+  <main class="relative z-10 flex-1">
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-8 pb-12 sm:pt-10 sm:pb-16 space-y-16 sm:space-y-24">
+
+      <!-- ===================================================================
+           SECTION 01 — FULL-WIDTH HERO MONUMENT
+      ==================================================================== -->
+      <section id="section-01" data-section-category="arch" class="exhibition-section space-y-5">
+        <div id="hero-monument-slot">
+          <!-- Populated via JS -->
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 02 — ASYMMETRIC BENTO GRID (3 ARTWORKS)
+      ==================================================================== -->
+      <section id="section-02" data-section-category="arch" class="exhibition-section space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-[0.18em] text-[#00F0FF]">
+              Section 02 · Architectural Topology
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+              Federated Constellation &amp; Sub-Second Spine
+            </h2>
+          </div>
+          <a
+            href="https://rayaantasnim.github.io/Arithmo-Edge/architecture.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs font-mono text-[#00F0FF] hover:text-white transition-colors"
+          >
+            <span>Explore 03. 14-Site Architecture</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div id="bento-grid-slot" class="grid grid-cols-1 lg:grid-cols-12 gap-6">
+          <!-- Populated via JS: Left large 7-col card + Right 5-col stacked 2 cards -->
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 03 — 5 CORE OLYMPIAD ARENAS SHOWCASE (5 ARTWORKS)
+      ==================================================================== -->
+      <section id="section-03" data-section-category="arenas" class="exhibition-section space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-[0.18em] text-[#8B5CF6]">
+              Section 03 · 5 Specialized ELO Domains
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+              The 5 Core Olympiad Arenas
+            </h2>
+          </div>
+          <a
+            href="https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs font-mono text-[#00F0FF] hover:text-white transition-colors"
+          >
+            <span>Enter 04. 5 Arenas &amp; 60 ELO Tiers</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div id="arenas-grid-slot" class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-6 gap-6">
+          <!-- Populated via JS: 3 top cards (lg:col-span-2 each) + 2 wide bottom cards (lg:col-span-3 each) -->
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 04 — COMPETITIVE ENGINE & WORLD CUP (2x2 GRID, 4 ARTWORKS)
+      ==================================================================== -->
+      <section id="section-04" data-section-category="contests" class="exhibition-section space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-[0.18em] text-[#F38020]">
+              Section 04 · Live Duels &amp; Global Rankings
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+              Competitive Engine &amp; World Cup
+            </h2>
+          </div>
+          <a
+            href="https://rayaantasnim.github.io/Arithmo-Edge/contests.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs font-mono text-[#F38020] hover:text-white transition-colors"
+          >
+            <span>Explore 05. Contest Engine &amp; Flaw Audit</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div id="contests-grid-slot" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated via JS -->
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 05 — 42-ENGINE AI & QPRT-4 SECURITY (2x2 GRID, 4 ARTWORKS)
+      ==================================================================== -->
+      <section id="section-05" data-section-category="security" class="exhibition-section space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-[0.18em] text-[#10B981]">
+              Section 05 · Neuro-Symbolic Intelligence &amp; Proctoring
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+              42-Engine AI Core &amp; QPRT-4 Security
+            </h2>
+          </div>
+          <div class="flex flex-wrap items-center gap-4">
+            <a
+              href="https://rayaantasnim.github.io/Arithmo-Edge/ai-core.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-mono text-[#00F0FF] hover:text-white transition-colors"
+            >
+              <span>06. 42-Engine AI Core</span>
+              <span aria-hidden="true">→</span>
+            </a>
+            <a
+              href="https://rayaantasnim.github.io/Arithmo-Edge/security-qprt4.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="inline-flex items-center gap-1.5 text-xs font-mono text-[#10B981] hover:text-white transition-colors"
+            >
+              <span>07. QPRT-4 &amp; Legal Shield</span>
+              <span aria-hidden="true">→</span>
+            </a>
+          </div>
+        </div>
+
+        <div id="security-grid-slot" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated via JS -->
+        </div>
+      </section>
+
+      <!-- ===================================================================
+           SECTION 06 — ACADEMY, WALLET & GRAND FINALE (3 ARTWORKS)
+      ==================================================================== -->
+      <section id="section-06" data-section-category="horizon" class="exhibition-section space-y-6">
+        <div class="flex flex-col sm:flex-row sm:items-end justify-between gap-3 border-b border-white/10 pb-4">
+          <div>
+            <div class="text-xs font-mono uppercase tracking-[0.18em] text-[#F59E0B]">
+              Section 06 · Institutional Scale &amp; 20-Year Vision
+            </div>
+            <h2 class="font-display text-2xl sm:text-3xl font-bold text-white mt-1">
+              Academy, Treasury &amp; Grand Singularity Horizon
+            </h2>
+          </div>
+          <a
+            href="https://rayaantasnim.github.io/Arithmo-Edge/roadmap.html"
+            target="_blank"
+            rel="noopener noreferrer"
+            class="inline-flex items-center gap-1.5 text-xs font-mono text-[#F59E0B] hover:text-white transition-colors"
+          >
+            <span>Explore 12. Decimal Rollout Roadmap</span>
+            <span aria-hidden="true">→</span>
+          </a>
+        </div>
+
+        <div id="horizon-pair-slot" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+          <!-- Populated via JS: Academy Arena + Closed-Loop Wallet -->
+        </div>
+
+        <div id="horizon-finale-slot">
+          <!-- Populated via JS: Full-width closing centerpiece banner -->
+        </div>
+      </section>
+
+    </div>
+  </main>
+
+  <!-- =====================================================================
+       UPGRADED 2-COLUMN FOOTER + CENTERED SOCIAL BAR ABOVE COPYRIGHT
+  ====================================================================== -->
+  <footer class="relative z-10 mt-14 bg-[#0B1120]/95 backdrop-blur-xl">
+    <!-- Top 2px Glowing Gradient Border: Cyan -> Violet -> Orange -->
+    <div class="h-[2px] w-full bg-gradient-to-r from-[#00F5FF] via-[#9D4EDD] to-[#FF8A2B] shadow-[0_0_16px_rgba(0,245,255,0.45)]"></div>
+
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 pt-14 pb-10">
+      <!-- 2 Balanced Columns -->
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-12 pb-10 border-b border-cyan-400/15">
+
+        <!-- Left Column: Brand Logo, Description & Genesis Status -->
+        <div class="lg:col-span-6 space-y-5">
+          <div class="flex items-center gap-3.5">
+            <div class="w-12 h-12 rounded-xl overflow-hidden border border-cyan-400/35 bg-[#111A2E] shadow-lg shadow-[#00F5FF]/15 shrink-0">
+              <img
+                src="Assets/favicon/favicon.ico"
+                onerror="this.onerror=null;this.src='https://rayaantasnim.github.io/Arithmo-Edge/favicon.jpg';"
+                alt="Arithmo Edge Favicon"
+                class="w-full h-full object-cover"
+              />
+            </div>
+            <div>
+              <div class="font-display font-bold text-xl text-[#F8FAFC] leading-tight">Arithmo Edge</div>
+              <div class="text-xs font-semibold text-[#00F5FF]">Powered by Olympiad Edge</div>
+            </div>
+          </div>
+
+          <p class="text-sm text-[#CBD5E1] leading-relaxed max-w-xl">
+            The World's First Real-Time ELO-Rated Competitive Mathematics &amp; Olympiad Mega-Ecosystem, Powered by Olympiad Edge. Launching V1.0 on Dec 16, 2026; custom .com domain follows in 2 months.
+          </p>
+
+          <div class="inline-flex items-center gap-2.5 px-4 py-2 rounded-full border border-[#10B981]/40 bg-[#10B981]/15 shadow-[0_0_20px_rgba(16,185,129,0.16)]">
+            <span class="relative flex h-2.5 w-2.5">
+              <span class="animate-ping absolute inline-flex h-full w-full rounded-full bg-[#10B981] opacity-75"></span>
+              <span class="relative inline-flex rounded-full h-2.5 w-2.5 bg-[#10B981] shadow-[0_0_8px_#10B981]"></span>
+            </span>
+            <span class="font-mono text-[11px] font-bold tracking-wider text-[#10B981]">
+              GENESIS BUILD ACTIVE · 14 PORTALS · 42 AI ENGINES
+            </span>
+          </div>
+        </div>
+
+        <!-- Right Column: 14-PAGE SHOWCASE MATRIX (2-Column Link Grid) -->
+        <div class="lg:col-span-6 space-y-4">
+          <h3 class="font-mono text-xs font-bold uppercase tracking-[0.18em] text-[#F8FAFC]">
+            14-PAGE SHOWCASE MATRIX
+          </h3>
+          <div id="footer-matrix-grid" class="grid grid-cols-1 sm:grid-cols-2 gap-2">
+            <!-- Populated via JS -->
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Centered Social Bar Above Copyright -->
+      <div class="py-8 border-b border-white/10 flex flex-wrap items-center justify-center gap-3 sm:gap-4">
+        <a
+          href="https://github.com/Arithmo-Edge"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-cyan-400/25 bg-[#111A2E]/90 hover:border-[#00F5FF] hover:bg-[#00F5FF]/10 hover:shadow-[0_0_20px_rgba(0,245,255,0.22)] text-[#F8FAFC] transition-all group"
+        >
+          <svg class="w-4 h-4 text-[#00F5FF] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path fill-rule="evenodd" clip-rule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
+          </svg>
+          <span class="text-xs font-semibold">GitHub</span>
+        </a>
+
+        <a
+          href="mailto:rayaantasnim@gmail.com"
+          class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-orange-400/25 bg-[#111A2E]/90 hover:border-[#FF8A2B] hover:bg-[#FF8A2B]/10 hover:shadow-[0_0_20px_rgba(255,138,43,0.22)] text-[#F8FAFC] transition-all group"
+        >
+          <svg class="w-4 h-4 text-[#FF8A2B] shrink-0" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24" aria-hidden="true">
+            <path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+          </svg>
+          <span class="text-xs font-semibold">Email</span>
+        </a>
+
+        <a
+          href="https://www.linkedin.com/in/rayaan-tasnim/"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-violet-400/25 bg-[#111A2E]/90 hover:border-[#9D4EDD] hover:bg-[#9D4EDD]/10 hover:shadow-[0_0_20px_rgba(157,78,221,0.24)] text-[#F8FAFC] transition-all group"
+        >
+          <svg class="w-4 h-4 text-[#9D4EDD] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.88 8.56a1.68 1.68 0 0 0 1.68-1.68c0-.93-.75-1.69-1.68-1.69a1.69 1.69 0 0 0-1.69 1.69c0 .93.76 1.68 1.69 1.68m1.39 9.94v-8.37H5.5v8.37h2.77z" />
+          </svg>
+          <span class="text-xs font-semibold">LinkedIn</span>
+        </a>
+
+        <a
+          href="https://www.youtube.com/@jaleeshabib"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="inline-flex items-center gap-2.5 px-4 py-2.5 rounded-xl border border-rose-400/25 bg-[#111A2E]/90 hover:border-[#F43F5E] hover:bg-[#F43F5E]/10 hover:shadow-[0_0_20px_rgba(244,63,94,0.22)] text-[#F8FAFC] transition-all group"
+        >
+          <svg class="w-4 h-4 text-[#F43F5E] shrink-0" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M23.498 6.186a3.016 3.016 0 0 0-2.122-2.136C19.505 3.545 12 3.545 12 3.545s-7.505 0-9.377.505A3.017 3.017 0 0 0 .502 6.186C0 8.07 0 12 0 12s0 3.93.502 5.814a3.016 3.016 0 0 0 2.122 2.136c1.871.505 9.376.505 9.376.505s7.505 0 9.377-.505a3.015 3.015 0 0 0 2.122-2.136C24 15.93 24 12 24 12s0-3.93-.502-5.814zM9.545 15.568V8.432L15.818 12l-6.273 3.568z" />
+          </svg>
+          <span class="text-xs font-semibold">YouTube</span>
+        </a>
+      </div>
+
+      <!-- Bottom Centered Copyright & Credits -->
+      <div class="pt-8 text-center space-y-1.5 text-xs text-[#CBD5E1]">
+        <p class="text-[#F8FAFC] font-medium">Core System Architecture by Rayaan Tasnim</p>
+        <p class="text-[#F8FAFC] font-medium">Mathematical Architecture by Jalees Habib</p>
+        <p class="pt-1 text-[#CBD5E1]/70">© All Rights Reserved</p>
+        <p class="text-[#CBD5E1] font-mono">© Arithmo-Edge 2026</p>
+        <p class="text-[#00F5FF] font-semibold">Powered by Olympiad Edge</p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =====================================================================
+       FULL-SCREEN CINEMA LIGHTBOX MODAL
+  ====================================================================== -->
+  <div
+    id="cinema-lightbox"
+    role="dialog"
+    aria-modal="true"
+    aria-label="Cinema Artwork Lightbox"
+    class="fixed inset-0 z-50 hidden bg-[#0B1120]/95 backdrop-blur-2xl flex flex-col"
+  >
+    <!-- Top Bar -->
+    <div class="px-4 sm:px-8 py-4 border-b border-cyan-400/20 flex items-center justify-between gap-4 bg-[#111A2E]/90 shrink-0">
+      <div class="flex items-center gap-3 min-w-0">
+        <span id="lb-index" class="font-mono text-xs px-2.5 py-1 rounded bg-[#00F5FF]/15 text-[#00F5FF] border border-[#00F5FF]/40 shrink-0">
+          01 / 20
+        </span>
+        <span id="lb-category" class="font-mono text-xs uppercase tracking-wider text-[#CBD5E1] truncate">
+          01. Architecture &amp; Federation
+        </span>
+      </div>
+
+      <div class="flex items-center gap-2 sm:gap-3 shrink-0">
+        <button
+          id="lb-autoplay-btn"
+          type="button"
+          class="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg text-xs font-mono border border-cyan-400/25 bg-[#0B1120] hover:border-[#00F5FF] text-[#F8FAFC] transition-colors cursor-pointer"
+        >
+          <span id="lb-autoplay-icon">▶</span>
+          <span id="lb-autoplay-label">Auto-Play</span>
+        </button>
+
+        <button
+          id="lb-close-btn"
+          type="button"
+          aria-label="Close Lightbox"
+          class="w-9 h-9 rounded-lg border border-white/15 bg-[#0B1120] hover:border-[#F43F5E]/60 hover:text-[#F43F5E] text-[#F8FAFC] flex items-center justify-center font-mono transition-colors cursor-pointer"
+        >
+          ✕
+        </button>
+      </div>
+    </div>
+
+    <!-- Slideshow Progress Bar -->
+    <div class="h-0.5 w-full bg-white/10 shrink-0 overflow-hidden">
+      <div id="lb-progress-bar" class="h-full w-0 bg-gradient-to-r from-[#00F5FF] via-[#10B981] to-[#FF8A2B]"></div>
+    </div>
+
+    <!-- Main Lightbox Viewport -->
+    <div class="flex-1 overflow-y-auto flex items-center justify-center p-4 sm:p-8">
+      <div class="w-full max-w-6xl grid grid-cols-1 lg:grid-cols-12 gap-6 lg:gap-8 items-center">
+        <!-- Image Stage -->
+        <div class="lg:col-span-8 relative group">
+          <div class="relative rounded-2xl overflow-hidden border border-cyan-400/25 bg-[#111A2E] shadow-2xl">
+            <img
+              id="lb-image"
+              src=""
+              alt=""
+              class="w-full max-h-[68vh] object-contain mx-auto bg-[#070B16]"
+            />
+
+            <!-- Prev / Next Floating Controls -->
+            <button
+              id="lb-prev-btn"
+              type="button"
+              aria-label="Previous Artwork"
+              class="absolute left-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#0B1120]/85 border border-cyan-400/30 hover:border-[#00F5FF] text-[#F8FAFC] flex items-center justify-center backdrop-blur-md transition-all cursor-pointer"
+            >
+              ←
+            </button>
+            <button
+              id="lb-next-btn"
+              type="button"
+              aria-label="Next Artwork"
+              class="absolute right-3 top-1/2 -translate-y-1/2 w-11 h-11 rounded-full bg-[#0B1120]/85 border border-cyan-400/30 hover:border-[#00F5FF] text-[#F8FAFC] flex items-center justify-center backdrop-blur-md transition-all cursor-pointer"
+            >
+              →
+            </button>
+          </div>
+        </div>
+
+        <!-- Architectural Lore Sidebar -->
+        <div class="lg:col-span-4 space-y-5 bg-[#111A2E]/95 border border-cyan-400/20 rounded-2xl p-6 shadow-xl">
+          <div class="flex items-center justify-between gap-2">
+            <span id="lb-plate-code" class="font-mono text-xs text-[#FF8A2B] uppercase tracking-widest">
+              PLATE 01
+            </span>
+            <span id="lb-accent-dot" class="w-2.5 h-2.5 rounded-full bg-[#00F5FF]"></span>
+          </div>
+
+          <h2 id="lb-title" class="font-display text-2xl font-bold text-[#F8FAFC] leading-snug">
+            Title
+          </h2>
+
+          <p id="lb-subtitle" class="text-xs font-mono uppercase tracking-wider text-[#00F0FF]">
+            Subsystem
+          </p>
+
+          <p id="lb-lore" class="text-sm text-slate-300 leading-relaxed">
+            Architectural lore description.
+          </p>
+
+          <div class="pt-3 border-t border-white/10 space-y-3">
+            <a
+              id="lb-portal-link"
+              href="https://rayaantasnim.github.io/Arithmo-Edge/index.html"
+              target="_blank"
+              rel="noopener noreferrer"
+              class="w-full inline-flex items-center justify-center gap-2 px-4 py-3 rounded-xl text-sm font-semibold text-[#06080D] bg-[#00F0FF] hover:bg-white transition-colors"
+            >
+              <span id="lb-portal-label">Explore Subsystem Page</span>
+              <span aria-hidden="true">↗</span>
+            </a>
+
+            <div class="flex items-center justify-between text-[11px] font-mono text-slate-500 pt-1">
+              <span>← / → Navigate</span>
+              <span>Space Slideshow</span>
+              <span>Esc Close</span>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- =====================================================================
+       CENTRALIZED DATA & APPLICATION LOGIC
+  ====================================================================== -->
+  <script>
+    // ---------------------------------------------------------------------
+    // 1. AUTO-TRACKING GALLERY CONFIGURATION (20 ARTWORKS)
+    // ---------------------------------------------------------------------
+    const IMAGE_BASE_PATH = "Assets/Images/";
+
+    const GALLERY_ITEMS = [
+      // SECTION 01: HERO MONUMENT
+      {
+        id: "obsidian-auditorium",
+        plate: "PLATE 01",
+        section: "hero",
+        categoryId: "arch",
+        categoryLabel: "01. Architecture & Federation",
+        title: "The Obsidian Olympiad Auditorium",
+        subtitle: "14 · VISUAL ARCHITECTURE EXHIBITION",
+        filename: "The Obsidian Olympiad Auditorium.jpg",
+        accent: "#00F0FF",
+        lore: "The monumental central amphitheater of Arithmo Edge—engineered in obsidian glass and luminous cyan coordinates where global Olympiad contenders converge in real-time ELO arenas.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/index.html",
+        portalLabel: "Explore 01. Arithmo Edge Home"
+      },
+
+      // SECTION 02: ASYMMETRIC BENTO GRID (3 ARTWORKS)
+      {
+        id: "federated-constellation",
+        plate: "PLATE 02",
+        section: "bento-primary",
+        categoryId: "arch",
+        categoryLabel: "01. Architecture & Federation",
+        title: "The 14-Portal Federated Constellation",
+        subtitle: "Federated Micro-Frontend Spine",
+        filename: "The 14-Portal Federated Constellation.webp",
+        accent: "#00F0FF",
+        lore: "Instead of a brittle monolith, Arithmo Edge orchestrates 14 autonomous portals unified by a lightweight Vanilla JS kernel (Arithmo-Core-SDK) enforcing global @handle routing and zero-latency state sync.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/architecture.html",
+        portalLabel: "Explore 03. 14-Site Architecture"
+      },
+      {
+        id: "sub-second-velocity",
+        plate: "PLATE 03",
+        section: "bento-secondary",
+        categoryId: "arch",
+        categoryLabel: "01. Architecture & Federation",
+        title: "Sub-Second Edge Velocity",
+        subtitle: "Cloudflare Edge & KaTeX Pipeline",
+        filename: "Sub-Second Edge Velocity.webp",
+        accent: "#F38020",
+        lore: "Built for competitive speed: edge-routed payloads, sub-millisecond LaTeX typesetting via KaTeX, and instant state reconciliation across 14 global leaderboards.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/architecture.html",
+        portalLabel: "Inspect Edge Infrastructure"
+      },
+      {
+        id: "zero-copy-genome",
+        plate: "PLATE 04",
+        section: "bento-secondary",
+        categoryId: "arch",
+        categoryLabel: "01. Architecture & Federation",
+        title: "Zero-Copy Mathematical Genome",
+        subtitle: "Zero-PII Reasoning Data Lake",
+        filename: "Zero-Copy Mathematical Genome.webp",
+        accent: "#8B5CF6",
+        lore: "Every 24 hours, automated pipelines strip all PII and distill verified proof trajectories, solve latencies, and symbolic state transitions into clean, contamination-free JSONL datasets.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/why-arithmo.html",
+        portalLabel: "Read 02. Why Arithmo-Edge?"
+      },
+
+      // SECTION 03: 5 CORE OLYMPIAD ARENAS (5 ARTWORKS)
+      {
+        id: "number-theory-arena",
+        plate: "PLATE 05",
+        section: "arenas",
+        categoryId: "arenas",
+        categoryLabel: "02. 5 Core Arenas",
+        title: "Number Theory Arena",
+        subtitle: "Arena 01 · Primes, Modular & Diophantine",
+        filename: "Number Theory Arena.webp",
+        accent: "#00F0FF",
+        glow: "rgba(0, 240, 255, 0.28)",
+        lore: "Cyan-illuminated proving ground dedicated to prime distributions, modular arithmetic, p-adic valuations, and deep Diophantine equations across 60 ELO tiers.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html",
+        portalLabel: "Enter 04. 5 Arenas & 60 ELO Tiers"
+      },
+      {
+        id: "algebra-arena",
+        plate: "PLATE 06",
+        section: "arenas",
+        categoryId: "arenas",
+        categoryLabel: "02. 5 Core Arenas",
+        title: "Algebra Arena",
+        subtitle: "Arena 02 · Inequalities & Functional Equations",
+        filename: "Algebra Arena.webp",
+        accent: "#8B5CF6",
+        glow: "rgba(139, 92, 246, 0.28)",
+        lore: "Violet-charged domain engineered for sharp inequalities, polynomial roots, functional equations, and symbolic structural transformations.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html",
+        portalLabel: "Enter 04. 5 Arenas & 60 ELO Tiers"
+      },
+      {
+        id: "geometry-arena",
+        plate: "PLATE 07",
+        section: "arenas",
+        categoryId: "arenas",
+        categoryLabel: "02. 5 Core Arenas",
+        title: "Geometry Arena",
+        subtitle: "Arena 03 · Synthetic, Projective & Inversive",
+        filename: "Geometry Arena.webp",
+        accent: "#F59E0B",
+        glow: "rgba(245, 158, 11, 0.28)",
+        lore: "Amber-lit spatial sanctuary built for Olympiad synthetic constructions, harmonic bundles, inversion, and computational Euclidean precision.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html",
+        portalLabel: "Enter 04. 5 Arenas & 60 ELO Tiers"
+      },
+      {
+        id: "combinatorics-arena",
+        plate: "PLATE 08",
+        section: "arenas",
+        categoryId: "arenas",
+        categoryLabel: "02. 5 Core Arenas",
+        title: "Combinatorics Arena",
+        subtitle: "Arena 04 · Graph Theory & Extremal Logic",
+        filename: "Combinatorics Arena.webp",
+        accent: "#10B981",
+        glow: "rgba(16, 185, 129, 0.28)",
+        lore: "Emerald lattice arena focused on invariants, monovariants, probabilistic proofs, Ramsey bounds, and algorithmic game theory.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html",
+        portalLabel: "Enter 04. 5 Arenas & 60 ELO Tiers"
+      },
+      {
+        id: "mixed-olympiad-arena",
+        plate: "PLATE 09",
+        section: "arenas",
+        categoryId: "arenas",
+        categoryLabel: "02. 5 Core Arenas",
+        title: "Mixed Olympiad Arena",
+        subtitle: "Arena 05 · Full-Spectrum IMO & Putnam Crucible",
+        filename: "Mixed Olympiad Arena.webp",
+        accent: "#F43F5E",
+        glow: "rgba(244, 63, 94, 0.28)",
+        lore: "Crimson flagship arena synthesizing all four Olympiad disciplines into cross-domain championship simulations and rated global matches.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html",
+        portalLabel: "Enter 04. 5 Arenas & 60 ELO Tiers"
+      },
+
+      // SECTION 04: COMPETITIVE ENGINE & WORLD CUP (4 ARTWORKS)
+      {
+        id: "bullet-blitz-duel",
+        plate: "PLATE 10",
+        section: "contests",
+        categoryId: "contests",
+        categoryLabel: "03. Contests & World Cup",
+        title: "The 60-Second Bullet Blitz Duel",
+        subtitle: "1v1 Real-Time ELO Matchmaking",
+        filename: "The 60-Second Bullet Blitz Duel.webp",
+        accent: "#F38020",
+        lore: "High-adrenaline 1v1 sprint duels pairing matched ELO contenders in 60-second mathematical blitzes with live split-second answer validation.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/contests.html",
+        portalLabel: "Explore 05. Contest Engine"
+      },
+      {
+        id: "shadow-bot-gauntlet",
+        plate: "PLATE 11",
+        section: "contests",
+        categoryId: "contests",
+        categoryLabel: "03. Contests & World Cup",
+        title: "Shadow Bot Gauntlet",
+        subtitle: "Calibrated AI Sparring & Post-Match Hacking",
+        filename: "Shadow Bot Gauntlet.webp",
+        accent: "#8B5CF6",
+        lore: "Adaptive Shadow Bots calibrated across 60 ELO tiers—allowing solo challengers to test endurance, speed, and proof resilience before live rated rounds.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/contests.html",
+        portalLabel: "Explore 05. Contest Engine"
+      },
+      {
+        id: "world-cup-crown",
+        plate: "PLATE 12",
+        section: "contests",
+        categoryId: "contests",
+        categoryLabel: "03. Contests & World Cup",
+        title: "Top 128 Annual World Cup Crown",
+        subtitle: "Global Championship Bracket",
+        filename: "Top 128 Annual World Cup Crown.webp",
+        accent: "#F59E0B",
+        lore: "The pinnacle annual knockout bracket uniting the top 128 ELO-rated Olympiad mathematicians on Earth under live proctored broadcast conditions.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/contests.html",
+        portalLabel: "View Championship Specs"
+      },
+      {
+        id: "infinite-archive",
+        plate: "PLATE 13",
+        section: "contests",
+        categoryId: "contests",
+        categoryLabel: "03. Contests & World Cup",
+        title: "Arithmo Database — The Infinite Archive",
+        subtitle: "SymPy Procedural Problem Vault",
+        filename: "Arithmo Database — The Infinite Archive.webp",
+        accent: "#00F0FF",
+        lore: "The Golden Repository pairing human-authored Olympiad seed templates with Python/SymPy procedural generators to synthesize contamination-free problem variants.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/socials-forge.html",
+        portalLabel: "Explore 10. Socials & Forge"
+      },
+
+      // SECTION 05: 42-ENGINE AI & QPRT-4 SECURITY (4 ARTWORKS)
+      {
+        id: "hybrid-neural-core",
+        plate: "PLATE 14",
+        section: "security",
+        categoryId: "security",
+        categoryLabel: "04. 42-AI & QPRT-4 Shield",
+        title: "The 42-Engine Hybrid Neural Core",
+        subtitle: "Gemini Pro/Flash + Qwen-Math + SymPy",
+        filename: "The 42-Engine Hybrid Neural Core.webp",
+        accent: "#00F0FF",
+        lore: "42 specialized neuro-symbolic engines working in concert—combining Socratic guidance, TokenMeter governance, and deterministic SymPy verification without spoiling proofs.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/ai-core.html",
+        portalLabel: "Explore 06. 42-Engine AI Core"
+      },
+      {
+        id: "qprt4-cyber-shield",
+        plate: "PLATE 15",
+        section: "security",
+        categoryId: "security",
+        categoryLabel: "04. 42-AI & QPRT-4 Shield",
+        title: "QPRT-4 Quad-Phase Cyber Shield",
+        subtitle: "Zero-Cheat Browser-Native Biometrics",
+        filename: "QPRT-4 Quad-Phase Cyber Shield.webp",
+        accent: "#10B981",
+        lore: "Client-side MediaPipe & TensorFlow.js inference executing 4.5-second Gaze Guard, 3-Axis Audio Trap, and keystroke entropy checks with zero raw video uploaded.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/security-qprt4.html",
+        portalLabel: "Explore 07. QPRT-4 & Legal Shield"
+      },
+      {
+        id: "blackhole-escalation",
+        plate: "PLATE 16",
+        section: "security",
+        categoryId: "security",
+        categoryLabel: "04. 42-AI & QPRT-4 Shield",
+        title: "11-Flag Blackhole Escalation",
+        subtitle: "AES-256 Signal Vault & Forensic Audit",
+        filename: "11-Flag Blackhole Escalation.webp",
+        accent: "#F43F5E",
+        lore: "Deterministic 11-flag anomaly escalation protocol sealing cryptographic telemetry inside the AES-256 Signal Vault for transparent moderator and peer appeal review.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/security-qprt4.html",
+        portalLabel: "Inspect Forensic Protocol"
+      },
+      {
+        id: "legal-privacy-shield",
+        plate: "PLATE 17",
+        section: "security",
+        categoryId: "security",
+        categoryLabel: "04. 42-AI & QPRT-4 Shield",
+        title: "14-Point Legal & Youth Privacy Shield",
+        subtitle: "COPPA / GDPR-K Compliant Governance",
+        filename: "14-Point Legal & Youth Privacy Shield.webp",
+        accent: "#8B5CF6",
+        lore: "Privacy-by-design architecture protecting young Olympiad competitors through zero-server video retention, strict PII scrubbing, and verifiable parental/institutional consent.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/security-qprt4.html",
+        portalLabel: "Review 14-Point Legal Shield"
+      },
+
+      // SECTION 06: ACADEMY, WALLET & GRAND FINALE (3 ARTWORKS)
+      {
+        id: "academy-arena",
+        plate: "PLATE 18",
+        section: "horizon-pair",
+        categoryId: "horizon",
+        categoryLabel: "05. Academy, Wallet & Horizon",
+        title: "Arithmo Academy Arena",
+        subtitle: "B2B Institutional OS & Dual-Handle Routing",
+        filename: "Arithmo Academy Arena.webp",
+        accent: "#00F0FF",
+        lore: "Turnkey operating system for schools, math circles, and national Olympiad camps featuring KYB verification, cohort tracking, and automated homework pipelines.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/academies.html",
+        portalLabel: "Explore 08. Academy Arena"
+      },
+      {
+        id: "merit-treasury",
+        plate: "PLATE 19",
+        section: "horizon-pair",
+        categoryId: "horizon",
+        categoryLabel: "05. Academy, Wallet & Horizon",
+        title: "Closed-Loop Arithmo Wallet & Merit Treasury",
+        subtitle: "Merit Credits & Zero-to-Low-Cost Access",
+        filename: "Closed-Loop Arithmo Wallet & Merit Treasury.webp",
+        accent: "#F59E0B",
+        lore: "Closed-loop merit ledger powering tournament stipends, academy scholarships, and sustainable micro-access without paywalling mathematical talent.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/pricing.html",
+        portalLabel: "Explore 09. Pricing & Wallet"
+      },
+      {
+        id: "grand-singularity",
+        plate: "PLATE 20",
+        section: "horizon-finale",
+        categoryId: "horizon",
+        categoryLabel: "05. Academy, Wallet & Horizon",
+        title: "V4.0 Grand Singularity & 8 Spin Off Horizon",
+        subtitle: "20-Year Holding Architecture",
+        filename: "Grand Singularity & 8 Spin-Off Horizon.webp",
+        accent: "#F38020",
+        lore: "The long-horizon blueprint incubating 8 autonomous deep-tech spin-offs—from the AI Reasoning Data Lab and Quant Recruitment Network to the Global Competitive League.",
+        portalUrl: "https://rayaantasnim.github.io/Arithmo-Edge/index.html",
+        portalLabel: "Return to 01. Arithmo Edge Home"
+      }
+    ];
+
+    // ---------------------------------------------------------------------
+    // 2. OFFICIAL 14-PAGE SHOWCASE DIRECTORY
+    // ---------------------------------------------------------------------
+    const SHOWCASE_PAGES = [
+      { num: "01", title: "Home", shortTitle: "Home", url: "https://rayaantasnim.github.io/Arithmo-Edge/index.html" },
+      { num: "02", title: "Why Arithmo-Edge?", shortTitle: "Why Arithmo-Edge?", url: "https://rayaantasnim.github.io/Arithmo-Edge/why-arithmo.html" },
+      { num: "03", title: "14-Site Architecture", shortTitle: "14-Site Architecture", url: "https://rayaantasnim.github.io/Arithmo-Edge/architecture.html" },
+      { num: "04", title: "5 Arenas & 60 ELO Tiers", shortTitle: "5 Arenas & 60 ELO Tiers", url: "https://rayaantasnim.github.io/Arithmo-Edge/arenas-elo.html" },
+      { num: "05", title: "Contest Engine & Flaw Audit", shortTitle: "Contest Engine & Audit", url: "https://rayaantasnim.github.io/Arithmo-Edge/contests.html" },
+      { num: "06", title: "42-Engine AI Core", shortTitle: "42-Engine AI Core", url: "https://rayaantasnim.github.io/Arithmo-Edge/ai-core.html" },
+      { num: "07", title: "QPRT-4 & Legal Shield", shortTitle: "QPRT-4 & Legal Shield", url: "https://rayaantasnim.github.io/Arithmo-Edge/security-qprt4.html" },
+      { num: "08", title: "Academy Arena", shortTitle: "Academy Arena", url: "https://rayaantasnim.github.io/Arithmo-Edge/academies.html" },
+      { num: "09", title: "Pricing & Wallet Checkout", shortTitle: "Pricing & Wallet", url: "https://rayaantasnim.github.io/Arithmo-Edge/pricing.html" },
+      { num: "10", title: "Socials, Forge & Guidebooks", shortTitle: "Socials & Forge", url: "https://rayaantasnim.github.io/Arithmo-Edge/socials-forge.html" },
+      { num: "11", title: "Headquarters & Patrons", shortTitle: "Headquarters & Patrons", url: "https://rayaantasnim.github.io/Arithmo-Edge/governance.html" },
+      { num: "12", title: "Decimal Rollout Roadmap", shortTitle: "Rollout Roadmap", url: "https://rayaantasnim.github.io/Arithmo-Edge/roadmap.html" },
+      { num: "13", title: "Pioneer Contributors", shortTitle: "Pioneer Contributors", url: "https://rayaantasnim.github.io/Arithmo-Edge/pioneers.html" },
+      { num: "14", title: "Visual Gallery", shortTitle: "Visual Gallery", url: "#top", active: true }
+    ];
+
+    const CATEGORIES = [
+      { id: "all", label: "All (20)" },
+      { id: "arch", label: "01. Architecture & Federation" },
+      { id: "arenas", label: "02. 5 Core Arenas" },
+      { id: "contests", label: "03. Contests & World Cup" },
+      { id: "security", label: "04. 42-AI & QPRT-4 Shield" },
+      { id: "horizon", label: "05. Academy, Wallet & Horizon" }
+    ];
+
+    // ---------------------------------------------------------------------
+    // 3. IMAGE RESOLUTION & AUTOMATIC .webp / .png / .jpg FALLBACK HANDLER
+    // ---------------------------------------------------------------------
+    function getPrimaryImageUrl(filename) {
+      return encodeURI(IMAGE_BASE_PATH + filename);
+    }
+
+    function buildFallbackCandidates(filename) {
+      const dotIdx = filename.lastIndexOf(".");
+      const stem = dotIdx !== -1 ? filename.slice(0, dotIdx) : filename;
+      const bases = [IMAGE_BASE_PATH, "Assets/gallery/", "Assets/Images/"];
+      const exts = [".webp", ".png", ".jpg", ".jpeg"];
+      const candidates = [];
+      for (const base of bases) {
+        candidates.push(encodeURI(base + filename));
+        for (const ext of exts) {
+          candidates.push(encodeURI(base + stem + ext));
+        }
+      }
+      // Deduplicate while preserving order
+      return [...new Set(candidates)];
+    }
+
+    window.handleArtworkError = function (imgEl, filename) {
+      const candidates = buildFallbackCandidates(filename);
+      const attempt = parseInt(imgEl.dataset.fallbackAttempt || "0", 10);
+      if (attempt < candidates.length) {
+        imgEl.dataset.fallbackAttempt = String(attempt + 1);
+        const nextUrl = candidates[attempt];
+        if (!imgEl.src.endsWith(nextUrl)) {
+          imgEl.src = nextUrl;
+          return;
+        }
+        // Skip duplicate and try next immediately
+        window.handleArtworkError(imgEl, filename);
+      } else {
+        imgEl.onerror = null;
+      }
+    };
+
+    // ---------------------------------------------------------------------
+    // 4. STATE
+    // ---------------------------------------------------------------------
+    let activeCategory = "all";
+    let filteredItems = [...GALLERY_ITEMS];
+    let currentLightboxIndex = 0;
+    let autoplayTimer = null;
+
+    // ---------------------------------------------------------------------
+    // 5. RENDER DRAWER & FOOTER 14-PAGE LINKS
+    // ---------------------------------------------------------------------
+    function renderNavigationMenus() {
+      const drawerList = document.getElementById("drawer-page-list");
+      const footerMatrix = document.getElementById("footer-matrix-grid");
+
+      drawerList.innerHTML = SHOWCASE_PAGES.map((page) => {
+        const isCurrent = Boolean(page.active);
+        const targetAttrs = isCurrent ? "" : 'target="_blank" rel="noopener noreferrer"';
+        const baseClasses = isCurrent
+          ? "border-[#00F5FF]/60 bg-[#00F5FF]/15 text-[#F8FAFC] shadow-[0_0_24px_rgba(0,245,255,0.16)]"
+          : "border-white/10 bg-[#111A2E]/85 text-[#CBD5E1] hover:border-cyan-400/35 hover:bg-[#16223D] hover:text-[#F8FAFC]";
+        const badgeClasses = isCurrent
+          ? "bg-[#00F5FF] text-[#0B1120] shadow-[0_0_12px_rgba(0,245,255,0.8)]"
+          : "bg-[#0B1120] text-[#CBD5E1]/80 border border-white/15";
+
+        return `
+          <a href="${page.url}" ${targetAttrs}
+             class="drawer-nav-link flex items-center justify-between gap-3 px-3.5 py-2.5 rounded-xl border transition-all ${baseClasses}">
+            <div class="flex items-center gap-3 min-w-0">
+              <span class="font-mono text-[11px] font-bold px-2 py-0.5 rounded-md shrink-0 ${badgeClasses}">
+                ${page.num}
+              </span>
+              <span class="text-sm font-medium truncate">${page.num}. ${page.title}</span>
+            </div>
+            ${
+              isCurrent
+                ? '<span class="font-mono text-[10px] uppercase tracking-wider text-[#00F5FF] shrink-0">Active</span>'
+                : '<span class="text-xs text-slate-400 shrink-0" aria-hidden="true">↗</span>'
+            }
+          </a>
+        `;
+      }).join("");
+
+      footerMatrix.innerHTML = SHOWCASE_PAGES.map((page) => {
+        const isCurrent = Boolean(page.active);
+        const targetAttrs = isCurrent ? "" : 'target="_blank" rel="noopener noreferrer"';
+        const classes = isCurrent
+          ? "border-[#00F5FF]/60 bg-[#00F5FF]/15 text-[#00F5FF] shadow-[0_0_18px_rgba(0,245,255,0.2)] font-semibold"
+          : "border-white/10 bg-[#111A2E]/80 text-[#CBD5E1] hover:border-cyan-400/40 hover:bg-[#16223D] hover:text-[#F8FAFC]";
+
+        return `
+          <a href="${page.url}" ${targetAttrs}
+             class="flex items-center gap-2 px-3 py-2 rounded-lg border text-xs transition-all truncate ${classes}">
+            <span class="font-mono text-[10px] font-bold opacity-85 shrink-0">${page.num}</span>
+            <span class="truncate">${page.shortTitle}</span>
+          </a>
+        `;
+      }).join("");
+
+      // Close drawer when clicking active #top link
+      drawerList.querySelectorAll('a[href="#top"]').forEach((el) => {
+        el.addEventListener("click", closeDrawer);
+      });
+    }
+
+    // ---------------------------------------------------------------------
+    // 6. LIVE COUNTDOWN TIMER TO DEC 31, 2026 12:00 AM
+    // ---------------------------------------------------------------------
+    function startCountdown() {
+      const targetTime = new Date("2026-12-31T00:00:00").getTime();
+      const daysEl = document.getElementById("cd-days");
+      const hoursEl = document.getElementById("cd-hours");
+      const minsEl = document.getElementById("cd-mins");
+      const secsEl = document.getElementById("cd-secs");
+
+      function update() {
+        const now = Date.now();
+        const diff = Math.max(0, targetTime - now);
+        const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+        const mins = Math.floor((diff / (1000 * 60)) % 60);
+        const secs = Math.floor((diff / 1000) % 60);
+
+        daysEl.textContent = String(days).padStart(2, "0");
+        hoursEl.textContent = String(hours).padStart(2, "0");
+        minsEl.textContent = String(mins).padStart(2, "0");
+        secsEl.textContent = String(secs).padStart(2, "0");
+      }
+
+      update();
+      setInterval(update, 1000);
+    }
+
+    // ---------------------------------------------------------------------
+    // 7. DRAWER INTERACTIONS
+    // ---------------------------------------------------------------------
+    const drawerWrapper = document.getElementById("drawer-wrapper");
+    const drawerBackdrop = document.getElementById("drawer-backdrop");
+    const navDrawer = document.getElementById("nav-drawer");
+    const openDrawerBtn = document.getElementById("open-drawer-btn");
+    const closeDrawerBtn = document.getElementById("close-drawer-btn");
+
+    function openDrawer() {
+      drawerWrapper.classList.remove("hidden", "pointer-events-none");
+      drawerWrapper.setAttribute("aria-hidden", "false");
+      openDrawerBtn.setAttribute("aria-expanded", "true");
+      requestAnimationFrame(() => {
+        drawerBackdrop.classList.remove("opacity-0");
+        drawerBackdrop.classList.add("opacity-100");
+        navDrawer.classList.remove("translate-x-full");
+        navDrawer.classList.add("translate-x-0");
+      });
+      document.body.style.overflow = "hidden";
+    }
+
+    function closeDrawer() {
+      drawerBackdrop.classList.remove("opacity-100");
+      drawerBackdrop.classList.add("opacity-0");
+      navDrawer.classList.remove("translate-x-0");
+      navDrawer.classList.add("translate-x-full");
+      openDrawerBtn.setAttribute("aria-expanded", "false");
+      setTimeout(() => {
+        drawerWrapper.classList.add("hidden", "pointer-events-none");
+        drawerWrapper.setAttribute("aria-hidden", "true");
+        if (document.getElementById("cinema-lightbox").classList.contains("hidden")) {
+          document.body.style.overflow = "";
+        }
+      }, 300);
+    }
+
+    openDrawerBtn.addEventListener("click", openDrawer);
+    closeDrawerBtn.addEventListener("click", closeDrawer);
+    drawerBackdrop.addEventListener("click", closeDrawer);
+
+    // ---------------------------------------------------------------------
+    // 8. RENDER EXHIBITION SECTIONS (ALL 20 ARTWORKS)
+    // ---------------------------------------------------------------------
+    function getItemGlobalIndex(id) {
+      return GALLERY_ITEMS.findIndex((item) => item.id === id);
+    }
+
+    function createStandardCardHTML(item, options = {}) {
+      const idx = getItemGlobalIndex(item.id);
+      const heightClass = options.heightClass || "h-64 sm:h-72";
+      const extraClasses = options.extraClasses || "";
+      const isArena = Boolean(options.isArena);
+      const cardClass = isArena ? "arena-card" : "glass-card";
+      const styleAttr = isArena
+        ? `style="--arena-accent: ${item.accent}; --arena-glow: ${item.glow};"`
+        : "";
+
+      return `
+        <article
+          ${styleAttr}
+          class="${cardClass} ${extraClasses} group rounded-2xl overflow-hidden flex flex-col cursor-pointer"
+          onclick="openLightboxById('${item.id}')"
+        >
+          <div class="relative ${heightClass} overflow-hidden bg-[#080E1C]">
+            <img
+              src="${getPrimaryImageUrl(item.filename)}"
+              alt="${item.title}"
+              loading="lazy"
+              onerror="handleArtworkError(this, '${item.filename.replace(/'/g, "\\'")}')"
+              class="artwork-img w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#111A2E] via-[#111A2E]/20 to-transparent"></div>
+
+            <!-- Top Overlay Badges -->
+            <div class="absolute top-3.5 left-3.5 right-3.5 flex items-center justify-between gap-2">
+              <span
+                class="font-mono text-[10px] font-bold uppercase tracking-widest px-2.5 py-1 rounded-md bg-[#0B1120]/85 backdrop-blur-md border border-white/20 shadow-sm"
+                style="color: ${item.accent};"
+              >
+                ${item.plate}
+              </span>
+              <span class="font-mono text-[10px] px-2.5 py-1 rounded-md bg-[#0B1120]/85 text-[#F8FAFC] border border-cyan-400/30 opacity-0 group-hover:opacity-100 transition-opacity">
+                Inspect ⤢
+              </span>
+            </div>
+          </div>
+
+          <div class="p-5 sm:p-6 flex-1 flex flex-col justify-between gap-4">
+            <div class="space-y-2">
+              <div class="text-[11px] font-mono uppercase tracking-wider font-semibold" style="color: ${item.accent};">
+                ${item.subtitle}
+              </div>
+              <h3 class="font-display text-lg sm:text-xl font-bold text-[#F8FAFC] leading-snug group-hover:text-[#00F5FF] transition-colors">
+                ${item.title}
+              </h3>
+              <p class="text-sm text-[#CBD5E1] leading-relaxed line-clamp-3">
+                ${item.lore}
+              </p>
+            </div>
+
+            <div class="pt-3 border-t border-white/10 flex items-center justify-between gap-3 text-xs">
+              <span class="font-mono text-[#CBD5E1]/70">#${String(idx + 1).padStart(2, "0")} · ${item.categoryLabel.split(". ")[1]}</span>
+              <a
+                href="${item.portalUrl}"
+                target="_blank"
+                rel="noopener noreferrer"
+                onclick="event.stopPropagation()"
+                class="inline-flex items-center gap-1 font-mono font-semibold hover:underline"
+                style="color: ${item.accent};"
+              >
+                <span>Open Portal</span>
+                <span aria-hidden="true">↗</span>
+              </a>
+            </div>
+          </div>
+        </article>
+      `;
+    }
+
+    function renderExhibition() {
+      // Section 01: Hero Monument
+      const heroItem = GALLERY_ITEMS.find((i) => i.section === "hero");
+      document.getElementById("hero-monument-slot").innerHTML = `
+        <div
+          class="relative rounded-3xl overflow-hidden border border-cyan-400/30 bg-[#111A2E] shadow-[0_24px_80px_-20px_rgba(0,245,255,0.22)] group cursor-pointer"
+          onclick="openLightboxById('${heroItem.id}')"
+        >
+          <div class="relative min-h-[460px] sm:min-h-[540px] lg:min-h-[600px] w-full">
+            <img
+              src="${getPrimaryImageUrl(heroItem.filename)}"
+              alt="${heroItem.title}"
+              onerror="handleArtworkError(this, '${heroItem.filename.replace(/'/g, "\\'")}')"
+              class="artwork-img absolute inset-0 w-full h-full object-cover"
+            />
+            <!-- Radiant Midnight Sapphire Overlay -->
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/55 to-[#0B1120]/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0B1120]/88 via-[#0B1120]/35 to-transparent"></div>
+
+            <!-- Hero Content -->
+            <div class="relative z-10 h-full min-h-[460px] sm:min-h-[540px] lg:min-h-[600px] p-6 sm:p-10 lg:p-14 flex flex-col justify-between">
+              <div class="flex flex-wrap items-center justify-between gap-3">
+                <span class="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full text-xs font-mono font-bold tracking-[0.16em] uppercase bg-[#0B1120]/80 backdrop-blur-md text-[#00F5FF] border border-[#00F5FF]/50 shadow-[0_0_24px_rgba(0,245,255,0.25)]">
+                  <span class="w-2 h-2 rounded-full bg-[#00F5FF] shadow-[0_0_8px_#00F5FF]"></span>
+                  14 · VISUAL ARCHITECTURE EXHIBITION
+                </span>
+                <span class="font-mono text-xs px-3 py-1.5 rounded-lg bg-[#0B1120]/75 border border-white/20 text-[#F8FAFC] backdrop-blur-md">
+                  PLATE 01 / 20 · CLICK TO INSPECT
+                </span>
+              </div>
+
+              <div class="max-w-3xl space-y-5 mt-12">
+                <h1 class="font-display text-3xl sm:text-5xl lg:text-6xl font-bold text-[#F8FAFC] tracking-tight leading-[1.06]">
+                  ${heroItem.title}
+                </h1>
+                <p class="text-sm sm:text-base lg:text-lg text-[#CBD5E1] leading-relaxed max-w-2xl">
+                  ${heroItem.lore}
+                </p>
+
+                <div class="flex flex-wrap items-center gap-3 pt-2" onclick="event.stopPropagation()">
+                  <button
+                    type="button"
+                    onclick="openLightboxById('${heroItem.id}')"
+                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold bg-[#00F5FF] text-[#0B1120] hover:bg-[#F8FAFC] transition-colors cursor-pointer shadow-lg shadow-[#00F5FF]/30"
+                  >
+                    <span>Inspect Monument Plate</span>
+                    <span aria-hidden="true">⤢</span>
+                  </button>
+                  <button
+                    type="button"
+                    onclick="startSlideshow()"
+                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-bold text-[#0B1120] bg-gradient-to-r from-[#00F5FF] via-[#10B981] to-[#FF8A2B] hover:brightness-110 transition-all cursor-pointer shadow-lg shadow-[#10B981]/25"
+                  >
+                    <span>▶ Auto-Exhibition Tour</span>
+                  </button>
+                  <a
+                    href="https://rayaantasnim.github.io/Arithmo-Edge/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-medium text-[#F8FAFC] border border-white/20 bg-[#111A2E]/80 hover:border-[#00F5FF] transition-colors backdrop-blur-md"
+                  >
+                    <span>01. Showcase Home</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+
+      // Section 02: Asymmetric Bento Grid (3 Artworks)
+      const bentoPrimary = GALLERY_ITEMS.find((i) => i.section === "bento-primary");
+      const bentoSecondary = GALLERY_ITEMS.filter((i) => i.section === "bento-secondary");
+      document.getElementById("bento-grid-slot").innerHTML = `
+        <div class="lg:col-span-7 flex">
+          ${createStandardCardHTML(bentoPrimary, {
+            heightClass: "h-72 sm:h-96 lg:h-[430px]",
+            extraClasses: "w-full"
+          })}
+        </div>
+        <div class="lg:col-span-5 flex flex-col gap-6">
+          ${bentoSecondary.map((item) =>
+            createStandardCardHTML(item, { heightClass: "h-52 sm:h-56" })
+          ).join("")}
+        </div>
+      `;
+
+      // Section 03: 5 Core Olympiad Arenas Showcase (5 Artworks)
+      const arenaItems = GALLERY_ITEMS.filter((i) => i.section === "arenas");
+      document.getElementById("arenas-grid-slot").innerHTML = arenaItems.map((item, idx) => {
+        const spanClass = idx < 3 ? "lg:col-span-2" : "md:col-span-1 lg:col-span-3";
+        return createStandardCardHTML(item, {
+          heightClass: idx < 3 ? "h-56 sm:h-64" : "h-64 sm:h-72",
+          extraClasses: spanClass,
+          isArena: true
+        });
+      }).join("");
+
+      // Section 04: Competitive Engine & World Cup (2x2 Grid, 4 Artworks)
+      const contestItems = GALLERY_ITEMS.filter((i) => i.section === "contests");
+      document.getElementById("contests-grid-slot").innerHTML = contestItems
+        .map((item) => createStandardCardHTML(item, { heightClass: "h-64 sm:h-72" }))
+        .join("");
+
+      // Section 05: 42-Engine AI & QPRT-4 Security (2x2 Grid, 4 Artworks)
+      const securityItems = GALLERY_ITEMS.filter((i) => i.section === "security");
+      document.getElementById("security-grid-slot").innerHTML = securityItems
+        .map((item) => createStandardCardHTML(item, { heightClass: "h-64 sm:h-72" }))
+        .join("");
+
+      // Section 06: Academy, Wallet & Grand Finale (3 Artworks)
+      const horizonPair = GALLERY_ITEMS.filter((i) => i.section === "horizon-pair");
+      document.getElementById("horizon-pair-slot").innerHTML = horizonPair
+        .map((item) => createStandardCardHTML(item, { heightClass: "h-64 sm:h-72" }))
+        .join("");
+
+      const finaleItem = GALLERY_ITEMS.find((i) => i.section === "horizon-finale");
+      document.getElementById("horizon-finale-slot").innerHTML = `
+        <div
+          class="relative rounded-3xl overflow-hidden border border-[#FF8A2B]/45 bg-[#111A2E] shadow-[0_24px_75px_-20px_rgba(255,138,43,0.22)] group cursor-pointer mt-2"
+          onclick="openLightboxById('${finaleItem.id}')"
+        >
+          <div class="relative min-h-[380px] sm:min-h-[440px]">
+            <img
+              src="${getPrimaryImageUrl(finaleItem.filename)}"
+              alt="${finaleItem.title}"
+              loading="lazy"
+              onerror="handleArtworkError(this, '${finaleItem.filename.replace(/'/g, "\\'")}')"
+              class="artwork-img absolute inset-0 w-full h-full object-cover"
+            />
+            <div class="absolute inset-0 bg-gradient-to-t from-[#0B1120] via-[#0B1120]/65 to-[#0B1120]/20"></div>
+            <div class="absolute inset-0 bg-gradient-to-r from-[#0B1120]/88 via-[#0B1120]/45 to-transparent"></div>
+
+            <div class="relative z-10 min-h-[380px] sm:min-h-[440px] p-6 sm:p-10 lg:p-12 flex flex-col justify-between">
+              <div class="flex items-center justify-between gap-3">
+                <span class="font-mono text-xs font-bold uppercase tracking-[0.16em] px-3 py-1 rounded-full bg-[#FF8A2B]/20 text-[#FF8A2B] border border-[#FF8A2B]/45">
+                  ${finaleItem.plate} · GRAND FINALE
+                </span>
+                <span class="font-mono text-xs text-[#F8FAFC] bg-[#0B1120]/80 px-3 py-1 rounded-lg border border-white/15">
+                  ${finaleItem.subtitle}
+                </span>
+              </div>
+
+              <div class="max-w-3xl space-y-4 mt-10">
+                <h3 class="font-display text-2xl sm:text-4xl font-bold text-[#F8FAFC] leading-tight">
+                  ${finaleItem.title}
+                </h3>
+                <p class="text-sm sm:text-base text-[#CBD5E1] leading-relaxed max-w-2xl">
+                  ${finaleItem.lore}
+                </p>
+
+                <div class="flex flex-wrap items-center gap-3 pt-2" onclick="event.stopPropagation()">
+                  <a
+                    href="https://rayaantasnim.github.io/Arithmo-Edge/index.html"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    class="inline-flex items-center gap-2 px-6 py-3 rounded-xl text-sm font-bold text-[#0B1120] bg-gradient-to-r from-[#FF8A2B] to-[#F59E0B] hover:brightness-110 shadow-lg shadow-[#FF8A2B]/30 transition-all"
+                  >
+                    <span>Return to Arithmo Edge Showcase Home</span>
+                    <span aria-hidden="true">↗</span>
+                  </a>
+                  <button
+                    type="button"
+                    onclick="openLightboxById('${finaleItem.id}')"
+                    class="inline-flex items-center gap-2 px-5 py-3 rounded-xl text-sm font-semibold text-[#F8FAFC] bg-[#0B1120]/85 border border-cyan-400/30 hover:border-[#00F5FF] transition-colors cursor-pointer"
+                  >
+                    <span>Inspect Plate 20</span>
+                    <span aria-hidden="true">⤢</span>
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      `;
+    }
+
+    // ---------------------------------------------------------------------
+    // 9. EXHIBITION CONTROLS DROPDOWN & CATEGORY FILTERING
+    // ---------------------------------------------------------------------
+    const controlsBtn = document.getElementById("exhibition-controls-btn");
+    const controlsDropdown = document.getElementById("exhibition-controls-dropdown");
+    const controlsWrapper = document.getElementById("exhibition-controls-wrapper");
+    const controlsChevron = document.getElementById("exhibition-chevron");
+
+    function openControlsDropdown() {
+      controlsDropdown.classList.remove("hidden");
+      controlsBtn.setAttribute("aria-expanded", "true");
+      controlsChevron.style.transform = "rotate(180deg)";
+    }
+
+    function closeControlsDropdown() {
+      controlsDropdown.classList.add("hidden");
+      controlsBtn.setAttribute("aria-expanded", "false");
+      controlsChevron.style.transform = "rotate(0deg)";
+    }
+
+    function toggleControlsDropdown() {
+      if (controlsDropdown.classList.contains("hidden")) {
+        openControlsDropdown();
+      } else {
+        closeControlsDropdown();
+      }
+    }
+
+    controlsBtn.addEventListener("click", (e) => {
+      e.stopPropagation();
+      toggleControlsDropdown();
+    });
+
+    document.addEventListener("click", (e) => {
+      if (!controlsWrapper.contains(e.target) && !controlsDropdown.classList.contains("hidden")) {
+        closeControlsDropdown();
+      }
+    });
+
+    function renderFilterBar() {
+      const filterBar = document.getElementById("filter-bar");
+      filterBar.innerHTML = CATEGORIES.map((cat) => {
+        const isActive = cat.id === activeCategory;
+        const classes = isActive
+          ? "bg-[#00F5FF]/20 text-[#00F5FF] border-[#00F5FF]/70 shadow-[0_0_16px_rgba(0,245,255,0.22)]"
+          : "bg-[#0B1120]/90 text-[#CBD5E1] border-white/15 hover:text-[#F8FAFC] hover:border-cyan-400/40";
+        return `
+          <button
+            type="button"
+            role="tab"
+            aria-selected="${isActive}"
+            data-category="${cat.id}"
+            onclick="setCategoryFilter('${cat.id}')"
+            class="px-3 py-1.5 rounded-lg border text-xs font-mono font-medium transition-all cursor-pointer ${classes}"
+          >
+            ${cat.label}
+          </button>
+        `;
+      }).join("");
+    }
+
+    window.setCategoryFilter = function (categoryId) {
+      activeCategory = categoryId;
+      filteredItems =
+        categoryId === "all"
+          ? [...GALLERY_ITEMS]
+          : GALLERY_ITEMS.filter((item) => item.categoryId === categoryId);
+
+      renderFilterBar();
+
+      document.querySelectorAll(".exhibition-section").forEach((sec) => {
+        const secCat = sec.getAttribute("data-section-category");
+        if (categoryId === "all" || secCat === categoryId) {
+          sec.classList.remove("hidden");
+        } else {
+          sec.classList.add("hidden");
+        }
+      });
+
+      const activeCatObj = CATEGORIES.find((c) => c.id === categoryId) || CATEGORIES[0];
+      document.getElementById("active-filter-badge-text").textContent = activeCatObj.label;
+      document.getElementById("visible-count-label").textContent =
+        `Showing ${filteredItems.length} / ${GALLERY_ITEMS.length} Plates`;
+    };
+
+    // ---------------------------------------------------------------------
+    // 10. FULL-SCREEN CINEMA LIGHTBOX & AUTO-EXHIBITION SLIDESHOW
+    // ---------------------------------------------------------------------
+    const lightbox = document.getElementById("cinema-lightbox");
+    const lbImage = document.getElementById("lb-image");
+    const lbTitle = document.getElementById("lb-title");
+    const lbSubtitle = document.getElementById("lb-subtitle");
+    const lbLore = document.getElementById("lb-lore");
+    const lbIndex = document.getElementById("lb-index");
+    const lbCategory = document.getElementById("lb-category");
+    const lbPlateCode = document.getElementById("lb-plate-code");
+    const lbAccentDot = document.getElementById("lb-accent-dot");
+    const lbPortalLink = document.getElementById("lb-portal-link");
+    const lbPortalLabel = document.getElementById("lb-portal-label");
+    const lbAutoplayBtn = document.getElementById("lb-autoplay-btn");
+    const lbAutoplayIcon = document.getElementById("lb-autoplay-icon");
+    const lbAutoplayLabel = document.getElementById("lb-autoplay-label");
+    const lbProgressBar = document.getElementById("lb-progress-bar");
+
+    function updateLightboxContent() {
+      const item = filteredItems[currentLightboxIndex] || GALLERY_ITEMS[0];
+      lbImage.dataset.fallbackAttempt = "0";
+      lbImage.onerror = () => window.handleArtworkError(lbImage, item.filename);
+      lbImage.src = getPrimaryImageUrl(item.filename);
+      lbImage.alt = item.title;
+
+      lbIndex.textContent = `${String(currentLightboxIndex + 1).padStart(2, "0")} / ${String(filteredItems.length).padStart(2, "0")}`;
+      lbCategory.textContent = item.categoryLabel;
+      lbPlateCode.textContent = item.plate;
+      lbPlateCode.style.color = item.accent;
+      lbAccentDot.style.backgroundColor = item.accent;
+      lbAccentDot.style.boxShadow = `0 0 10px ${item.accent}`;
+
+      lbTitle.textContent = item.title;
+      lbSubtitle.textContent = item.subtitle;
+      lbSubtitle.style.color = item.accent;
+      lbLore.textContent = item.lore;
+      lbPortalLink.href = item.portalUrl;
+      lbPortalLabel.textContent = item.portalLabel;
+
+      if (autoplayTimer) {
+        restartProgressBar();
+      }
+    }
+
+    function restartProgressBar() {
+      lbProgressBar.classList.remove("slideshow-progress-active");
+      void lbProgressBar.offsetWidth;
+      lbProgressBar.classList.add("slideshow-progress-active");
+    }
+
+    window.openLightboxById = function (id, autoPlay = false) {
+      let idx = filteredItems.findIndex((i) => i.id === id);
+      if (idx === -1) {
+        filteredItems = [...GALLERY_ITEMS];
+        idx = filteredItems.findIndex((i) => i.id === id);
+      }
+      currentLightboxIndex = Math.max(0, idx);
+      lightbox.classList.remove("hidden");
+      document.body.style.overflow = "hidden";
+      updateLightboxContent();
+
+      if (autoPlay) {
+        enableAutoplay();
+      } else {
+        disableAutoplay();
+      }
+    };
+
+    function closeLightbox() {
+      disableAutoplay();
+      lightbox.classList.add("hidden");
+      if (drawerWrapper.classList.contains("hidden")) {
+        document.body.style.overflow = "";
+      }
+    }
+
+    function nextArtwork() {
+      currentLightboxIndex = (currentLightboxIndex + 1) % filteredItems.length;
+      updateLightboxContent();
+    }
+
+    function prevArtwork() {
+      currentLightboxIndex = (currentLightboxIndex - 1 + filteredItems.length) % filteredItems.length;
+      updateLightboxContent();
+    }
+
+    function enableAutoplay() {
+      disableAutoplay();
+      autoplayTimer = setInterval(nextArtwork, 5000);
+      lbAutoplayIcon.textContent = "❚❚";
+      lbAutoplayLabel.textContent = "Playing (5s)";
+      lbAutoplayBtn.classList.add("border-[#00F0FF]/60", "text-[#00F0FF]");
+      restartProgressBar();
+    }
+
+    function disableAutoplay() {
+      if (autoplayTimer) {
+        clearInterval(autoplayTimer);
+        autoplayTimer = null;
+      }
+      lbAutoplayIcon.textContent = "▶";
+      lbAutoplayLabel.textContent = "Auto-Play";
+      lbAutoplayBtn.classList.remove("border-[#00F0FF]/60", "text-[#00F0FF]");
+      lbProgressBar.classList.remove("slideshow-progress-active");
+      lbProgressBar.style.width = "0%";
+    }
+
+    function toggleAutoplay() {
+      if (autoplayTimer) {
+        disableAutoplay();
+      } else {
+        enableAutoplay();
+      }
+    }
+
+    window.startSlideshow = function () {
+      closeControlsDropdown();
+      const startItem = filteredItems[0] || GALLERY_ITEMS[0];
+      window.openLightboxById(startItem.id, true);
+    };
+
+    document.getElementById("start-slideshow-btn").addEventListener("click", window.startSlideshow);
+    document.getElementById("lb-close-btn").addEventListener("click", closeLightbox);
+    document.getElementById("lb-next-btn").addEventListener("click", nextArtwork);
+    document.getElementById("lb-prev-btn").addEventListener("click", prevArtwork);
+    lbAutoplayBtn.addEventListener("click", toggleAutoplay);
+
+    // Click outside lightbox content area to close
+    lightbox.addEventListener("click", (e) => {
+      if (e.target === lightbox) {
+        closeLightbox();
+      }
+    });
+
+    // Keyboard navigation
+    document.addEventListener("keydown", (e) => {
+      const lightboxOpen = !lightbox.classList.contains("hidden");
+      const drawerOpen = !drawerWrapper.classList.contains("hidden");
+      const dropdownOpen = !controlsDropdown.classList.contains("hidden");
+
+      if (e.key === "Escape") {
+        if (lightboxOpen) closeLightbox();
+        else if (dropdownOpen) closeControlsDropdown();
+        else if (drawerOpen) closeDrawer();
+      } else if (lightboxOpen) {
+        if (e.key === "ArrowRight") {
+          e.preventDefault();
+          nextArtwork();
+        } else if (e.key === "ArrowLeft") {
+          e.preventDefault();
+          prevArtwork();
+        } else if (e.key === " ") {
+          e.preventDefault();
+          toggleAutoplay();
+        }
+      }
+    });
+
+    // ---------------------------------------------------------------------
+    // 11. BOOTSTRAP
+    // ---------------------------------------------------------------------
+    document.addEventListener("DOMContentLoaded", () => {
+      renderNavigationMenus();
+      renderFilterBar();
+      renderExhibition();
+      startCountdown();
+    });
+  </script>
+</body>
+</html>
